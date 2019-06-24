@@ -1,0 +1,25 @@
+{
+  "name": "fraud-demo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "npm run build && next export"
+  },
+  "keywords": [],
+  "author": "Tom Sherman <the.tomsherman@gmail.com> (https://tom-sherman.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.19.6",
+    "express": "^4.17.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-vis": "^1.11.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
