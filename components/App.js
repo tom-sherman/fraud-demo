@@ -44,7 +44,7 @@ export const App = withRouter(({ router, children }) => {
                 </a>
               </Link>
             </Menu.Item>
-            <Divider />
+            {/* <Divider /> */}
             <Menu.Item key="/validate">
               <Link href="/validate">
                 <a className="space-between">
