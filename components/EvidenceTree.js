@@ -65,6 +65,3 @@ export class EvidenceTree extends Component {
     )
   }
 }
-
-const nodeTitle = fact =>
-  `${fact.subject.value} - ${fact.relationship.type} - ${fact.object.value}`

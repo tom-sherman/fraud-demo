@@ -20,7 +20,7 @@ class MyApp extends App {
   }
 
   INITIAL_APP_STATE = {
-    cases: data,
+    cases: data.map(d => ({ originalDecision: d.decision, ...d })),
     referralsToday: data.filter(filterRefer).length
   }
 
@@ -62,6 +62,7 @@ function markCase(state, action, decision) {
       }
 
       c.decision = decision
+      c.markedAs = decision
       return c
     })
   }

@@ -1,4 +1,4 @@
-import { Descriptions, Table, Tabs } from 'antd'
+import { Descriptions, Table, Tabs, Alert } from 'antd'
 import { formatDate, formatCurrency } from '../util'
 import { EvidenceTree } from './EvidenceTree'
 
@@ -30,7 +30,8 @@ export const Case = ({
   dateCardLastIssued,
   addressLastChanged,
   postcode,
-  decision
+  markedAs,
+  originalDecision
 }) => (
   <Tabs defaultActiveKey="1">
     <TabPane tab={`Case#${id} info`} key="1">
@@ -49,13 +50,32 @@ export const Case = ({
         <Descriptions.Item label="Case flagged on">
           {formatDate(new Date(flagDate))}
         </Descriptions.Item>
+        <Descriptions.Item label="Original Rainbird decision">
+          {originalDecision}
+        </Descriptions.Item>
       </Descriptions>
     </TabPane>
     <TabPane tab="Transactions" key="2">
       <TransactionTable transactions={transactions} />
     </TabPane>
-    <TabPane tab="Rainbird decisioning" key="3">
-      <EvidenceTree decision={decision} />
+    <TabPane tab="Decisioning" key="3">
+      <style jsx>{`
+        .alert {
+          display: inline-block;
+          margin-bottom: 1em;
+        }
+      `}</style>
+      {typeof markedAs !== 'undefined' ? (
+        <div className="alert">
+          <Alert
+            message={`The user marked this case as ${markedAs.toLowerCase()}.`}
+            type="info"
+            showIcon
+          />
+        </div>
+      ) : null}
+      <p>Rainbird's evidence tree:</p>
+      <EvidenceTree decision={originalDecision} />
     </TabPane>
   </Tabs>
 )
