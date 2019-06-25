@@ -48,6 +48,14 @@ const reducer = (state, action) => {
       return markCase(state, action, 'Fraud')
     case 'markGenuine':
       return markCase(state, action, 'Genuine')
+    case 'addCase':
+      return {
+        ...state,
+        cases: state.cases.concat({
+          id: nextCaseId(state.cases),
+          ...action.payload
+        })
+      }
     default:
       throw new Error(`"${action.type}" is not a valid action.`)
   }
@@ -67,5 +75,8 @@ function markCase(state, action, decision) {
     })
   }
 }
+
+const nextCaseId = cases =>
+  cases.reduce((prev, curr) => (prev.id > curr.id ? prev.id : curr.id), 0)
 
 export default MyApp

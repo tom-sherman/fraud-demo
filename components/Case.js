@@ -31,7 +31,8 @@ export const Case = ({
   addressLastChanged,
   postcode,
   markedAs,
-  originalDecision
+  originalDecision,
+  previousPostcode
 }) => (
   <Tabs defaultActiveKey="1">
     <TabPane tab={`Case#${id} info`} key="1">
@@ -41,14 +42,23 @@ export const Case = ({
           Account#{accountId}
         </Descriptions.Item>
         <Descriptions.Item label="Postcode">{postcode}</Descriptions.Item>
+        <Descriptions.Item label="Previous postcode">
+          {previousPostcode}
+        </Descriptions.Item>
         <Descriptions.Item label="Date card last issued">
-          {formatDate(new Date(dateCardLastIssued))}
+          {typeof dateCardLastIssued !== 'undefined'
+            ? formatDate(new Date(dateCardLastIssued))
+            : null}
         </Descriptions.Item>
         <Descriptions.Item label="Date address last changed">
-          {formatDate(new Date(addressLastChanged))}
+          {typeof addressLastChanged !== 'undefined'
+            ? formatDate(new Date(addressLastChanged))
+            : null}
         </Descriptions.Item>
         <Descriptions.Item label="Case flagged on">
-          {formatDate(new Date(flagDate))}
+          {typeof flagDate !== 'undefined'
+            ? formatDate(new Date(flagDate))
+            : null}
         </Descriptions.Item>
         <Descriptions.Item label="Original Rainbird decision">
           {originalDecision}
