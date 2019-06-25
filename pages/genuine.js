@@ -11,7 +11,7 @@ const GenuinePage = () => {
   return (
     <>
       <Head>
-        <title>Genuine | Rainbird Fraud Demo</title>
+        <title>Genuine | Rainbird Fraud Detection</title>
       </Head>
       <Typography.Title>Genuine Cases</Typography.Title>
       <CaseTable

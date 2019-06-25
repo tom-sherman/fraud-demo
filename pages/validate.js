@@ -9,7 +9,7 @@ const ValidatePage = () => {
   return (
     <>
       <Head>
-        <title>Validate | Rainbird Fraud Demo</title>
+        <title>Validate | Rainbird Fraud Detection</title>
       </Head>
       <Typography.Title>Validate Cases</Typography.Title>
       <CaseTable

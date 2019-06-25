@@ -12,7 +12,7 @@ const HomePage = ({ history }) => {
   return (
     <>
       <Head>
-        <title>Home | Rainbird Fraud Demo</title>
+        <title>Home | Rainbird Fraud Detection</title>
       </Head>
 
       <div>
