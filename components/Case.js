@@ -1,5 +1,6 @@
 import { Descriptions, Table, Tabs } from 'antd'
 import { formatDate, formatCurrency } from '../util'
+import { EvidenceTree } from './EvidenceTree'
 
 const { TabPane } = Tabs
 
@@ -28,7 +29,8 @@ export const Case = ({
   transactions,
   dateCardLastIssued,
   addressLastChanged,
-  postcode
+  postcode,
+  decision
 }) => (
   <Tabs defaultActiveKey="1">
     <TabPane tab={`Case#${id} info`} key="1">
@@ -53,7 +55,7 @@ export const Case = ({
       <TransactionTable transactions={transactions} />
     </TabPane>
     <TabPane tab="Rainbird decisioning" key="3">
-      TODO...
+      <EvidenceTree decision={decision} />
     </TabPane>
   </Tabs>
 )
