@@ -79,17 +79,15 @@ const reducer = (state, action) => {
           if (c.id !== action.payload.id) {
             return c
           }
-          console.log('caseDecision', action.payload)
-
-          c.decision = action.payload.decision
-          if (
-            action.payload.decision !== 'Info needed' &&
-            action.payload.decision !== 'Error'
-          ) {
-            c.rbDecision = action.payload.decision
-            c.factId = action.payload.apiResponse.result[0].factID
+          return {
+            ...c,
+            ...(action.payload.decision !== 'Info needed' &&
+              action.payload.decision !== 'Error' && {
+                rbDecision: action.payload.decision,
+                factId: action.payload.apiResponse.result[0].factID
+              }),
+            decision: action.payload.decision
           }
-          return c
         })
       }
     case 'updateCase':
