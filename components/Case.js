@@ -253,7 +253,7 @@ export const Case = props => {
             <TransactionTable transactions={caseData.transactions} />
           </TabPane>
           <TabPane tab="Decisioning" key="3">
-            {typeof markedAs !== 'undefined' ? (
+            {typeof caseData.markedAs !== 'undefined' ? (
               <div className="alert">
                 <Alert
                   message={`The user marked this case as ${caseData.markedAs.toLowerCase()}.`}
