@@ -116,7 +116,7 @@ const createFacts = ({ transactions, ...caseData }) => {
   } of transactions) {
     transactionFacts.push({
       subject: caseData.accountId,
-      relationship: 'has associated transactions',
+      relationship: 'has transaction',
       object: id
     })
 

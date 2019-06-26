@@ -5,6 +5,7 @@ import { Typography } from 'antd'
 import { useAppState } from '../components/AppContext'
 import { filterFraud } from '../util'
 import { openDecisionNotification } from '../components/notifications'
+import Router from 'next/router'
 
 const FraudPage = () => {
   const [{ cases }, dispatch] = useAppState()
@@ -23,7 +24,8 @@ const FraudPage = () => {
               dispatch({ type: 'markGenuine', payload: record.id })
               openDecisionNotification({
                 decision: 'Genuine',
-                message: `Case#${record.id} marked as Genuine.`
+                message: `Case#${record.id} marked as Genuine.`,
+                onClick: () => Router.push('/genuine')
               })
             }}
           >

@@ -41,7 +41,7 @@ export const App = withRouter(({ router, children }) => {
           <Menu
             mode="inline"
             // The key of each menu item must be it's pathname
-            defaultSelectedKeys={[router.pathname]}
+            selectedKeys={[router.pathname]}
             style={{ height: '100%', borderRight: 0 }}
           >
             <style jsx>{`

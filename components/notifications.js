@@ -4,7 +4,8 @@ import { filterFraud, filterGenuine, filterRefer } from '../util'
 export const openDecisionNotification = ({
   decision,
   message,
-  description
+  description,
+  onClick
 }) => {
   let type
   if (filterRefer({ decision })) {
@@ -16,6 +17,7 @@ export const openDecisionNotification = ({
   }
   notification[type]({
     message,
-    description
+    description,
+    onClick
   })
 }

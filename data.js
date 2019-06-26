@@ -183,7 +183,9 @@ const data = [
         source: 'Online no PIN used'
       }
     ],
-    decision: 'Fraud'
+    decision: 'Genuine',
+    factId:
+      'WA:RF:913cd15d5a51cfa4777754c4b3b39cc436165df4aa50cab2c69533b64135bc67'
   },
   {
     id: 2,
@@ -250,14 +252,16 @@ const data = [
         source: 'Card present and PIN used'
       }
     ],
-    decision: 'Fraud'
+    decision: 'Card Not Present Fraud',
+    factId:
+      'WA:RF:2a042785ccbe21a2d2da708e92178a41ce6e3b03c447e36f47eb4682683fbbfa'
   },
   {
     id: 3,
     accountId: '1182',
     flagDate: moment('2019-03-13T00:00:00.000Z'),
     contactDetailsLastChanged: moment('2019-03-12T00:00:00.000Z'),
-    postcode: null,
+    postcode: 'NR1 1JG',
     previousPostcode: 'HX2 6PW',
     dateCardLastIssued: moment('2019-03-12T00:00:00.000Z'),
     addressLastChanged: moment('2019-03-12T00:00:00.000Z'),
@@ -335,7 +339,9 @@ const data = [
         source: 'Card present and PIN used'
       }
     ],
-    decision: 'Genuine'
+    decision: 'Application Fraud',
+    factId:
+      'WA:RF:e7f6daa88de902d1effa0fbe0a1441fd13b1101f09650d02fbb3f688a4601b33'
   },
   {
     id: 4,
@@ -343,11 +349,59 @@ const data = [
     flagDate: moment('2019-03-12T00:00:00.000Z'),
     contactDetailsLastChanged: moment('1988-12-11T00:00:00.000Z'),
     postcode: 'BB11 5RJ',
-    previousPostcode: 'LL46 2TB',
-    dateCardLastIssued: moment('2017-10-01T23:00:00.000Z'),
-    addressLastChanged: null,
-    transactions: [],
-    decision: 'Fraud'
+    previousPostcode: 'BB11 5RJ',
+    dateCardLastIssued: moment('2019-02-28T23:00:00.000Z'),
+    addressLastChanged: moment('2019-03-09T00:00:00.000Z'),
+    transactions: [
+      {
+        id: 'd23gfdfd6d',
+        accountId: '1414',
+        location: 'Nottingham',
+        amount: 999,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5411',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: 'hdgd76sjfgd',
+        accountId: '1414',
+        location: 'Nottingham',
+        amount: 24999,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5411',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: '8gh98kllsgd3',
+        accountId: '1414',
+        location: 'Nottingham',
+        amount: 279,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5734',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: 'nlc4x3wd9j',
+        accountId: '1414',
+        location: 'Nottingham',
+        amount: 14,
+        date: moment('2019-03-06T00:00:00.000Z'),
+        merchantCode: '3456',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: 'l38xh3kaby',
+        accountId: '1414',
+        location: 'Nottingham',
+        amount: 16,
+        date: moment('2019-03-05T00:00:00.000Z'),
+        merchantCode: '5251',
+        source: 'Card present no PIN used'
+      }
+    ],
+    decision: 'Account Takeover',
+    factId:
+      'WA:RF:a58d9ec8430bfd8e58bd971b34585aae87ac8dfb46d9a67830ca89bbac83c804'
   },
   {
     id: 5,
@@ -359,7 +413,7 @@ const data = [
     dateCardLastIssued: moment('2016-06-28T23:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
-    decision: 'Genuine'
+    decision: 'Info needed'
   },
   {
     id: 6,
@@ -367,11 +421,13 @@ const data = [
     flagDate: moment('2019-03-12T00:00:00.000Z'),
     contactDetailsLastChanged: moment('1999-03-18T00:00:00.000Z'),
     postcode: 'NG34 7XW',
-    previousPostcode: null,
-    dateCardLastIssued: moment('2016-01-27T00:00:00.000Z'),
+    previousPostcode: 'EH141DX',
+    dateCardLastIssued: moment('2019-02-27T00:00:00.000Z'),
     addressLastChanged: moment('1993-07-30T23:00:00.000Z'),
     transactions: [],
-    decision: 'Genuine'
+    decision: 'Refer',
+    factId:
+      'WA:RF:5beec54c8348c6425730e2d337994323421a8c9b0bf99ae76fe436e9b686dc57'
   },
   {
     id: 7,
@@ -383,7 +439,9 @@ const data = [
     dateCardLastIssued: moment('2015-10-04T23:00:00.000Z'),
     addressLastChanged: moment('1957-04-30T23:00:00.000Z'),
     transactions: [],
-    decision: 'Fraud'
+    decision: 'Genuine',
+    factId:
+      'WA:RF:13fdf14bab568aa00b2d42f7ca5d53ee76b1c5c97d9c73976e00ab83a3f4a873'
   },
   {
     id: 8,
@@ -395,7 +453,7 @@ const data = [
     dateCardLastIssued: moment('2015-05-16T23:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
-    decision: 'Fraud'
+    decision: 'Info needed'
   },
   {
     id: 9,
@@ -407,7 +465,7 @@ const data = [
     dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
-    decision: 'Fraud'
+    decision: 'Info needed'
   },
   {
     id: 10,
@@ -419,7 +477,7 @@ const data = [
     dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
-    decision: 'Refer'
+    decision: 'Info needed'
   },
   {
     id: 11,
@@ -431,7 +489,7 @@ const data = [
     dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
-    decision: 'Refer'
+    decision: 'Info needed'
   }
 ]
 
