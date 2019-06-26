@@ -22,7 +22,7 @@ class MyApp extends App {
   }
 
   INITIAL_APP_STATE = {
-    cases: data.map(d => ({ rbDecision: d.decision, ...d })),
+    cases: data,
     referralsToday: data.filter(filterRefer).length,
     completedReferrals: 0
   }
@@ -81,6 +81,7 @@ const reducer = (state, action) => {
           }
           return {
             ...c,
+            rbDecision: null,
             ...(action.payload.decision !== 'Info needed' &&
               action.payload.decision !== 'Error' && {
                 rbDecision: action.payload.decision,

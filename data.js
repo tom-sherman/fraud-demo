@@ -184,6 +184,7 @@ const data = [
       }
     ],
     decision: 'Genuine',
+    rbDecision: 'Genuine',
     factId:
       'WA:RF:913cd15d5a51cfa4777754c4b3b39cc436165df4aa50cab2c69533b64135bc67'
   },
@@ -340,6 +341,7 @@ const data = [
       }
     ],
     decision: 'Application Fraud',
+    rbDecision: 'Application Fraud',
     factId:
       'WA:RF:e7f6daa88de902d1effa0fbe0a1441fd13b1101f09650d02fbb3f688a4601b33'
   },
@@ -400,6 +402,7 @@ const data = [
       }
     ],
     decision: 'Account Takeover',
+    rbDecision: 'Account Takeover',
     factId:
       'WA:RF:a58d9ec8430bfd8e58bd971b34585aae87ac8dfb46d9a67830ca89bbac83c804'
   },
@@ -426,6 +429,7 @@ const data = [
     addressLastChanged: moment('1993-07-30T23:00:00.000Z'),
     transactions: [],
     decision: 'Refer',
+    rbDecision: 'Refer',
     factId:
       'WA:RF:5beec54c8348c6425730e2d337994323421a8c9b0bf99ae76fe436e9b686dc57'
   },
@@ -440,6 +444,7 @@ const data = [
     addressLastChanged: moment('1957-04-30T23:00:00.000Z'),
     transactions: [],
     decision: 'Genuine',
+    rbDecision: 'Genuine',
     factId:
       'WA:RF:13fdf14bab568aa00b2d42f7ca5d53ee76b1c5c97d9c73976e00ab83a3f4a873'
   },

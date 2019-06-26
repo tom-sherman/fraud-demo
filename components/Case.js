@@ -262,11 +262,23 @@ export const Case = props => {
                 />
               </div>
             ) : null}
-            <p>Rainbird's evidence tree:</p>
-            <EvidenceTree
-              decision={caseData.rbDecision}
-              factId={caseData.factId}
-            />
+            {caseData.rbDecision ? (
+              <>
+                <p>Rainbird's evidence tree:</p>
+                <EvidenceTree
+                  decision={caseData.rbDecision}
+                  factId={caseData.factId}
+                />
+              </>
+            ) : (
+              <div className="alert">
+                <Alert
+                  message={`Rainbird has not been able to make a decision on this case.`}
+                  type="info"
+                  showIcon
+                />
+              </div>
+            )}
           </TabPane>
         </Tabs>
       </div>
