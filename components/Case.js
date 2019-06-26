@@ -177,6 +177,7 @@ export const Case = props => {
     if (pending) {
       ;(async () => {
         const { decision, interaction } = await analyseCase(caseData)
+        setPending(false)
 
         dispatch({
           type: 'caseDecision',
