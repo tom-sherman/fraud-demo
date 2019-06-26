@@ -21,8 +21,8 @@ const ValidatePage = () => {
               onClick={() => {
                 dispatch({ type: 'markGenuine', payload: record.id })
                 openDecisionNotification({
-                  decision: 'Fraud',
-                  message: `Case#${record.id} marked as Fraud.`
+                  decision: 'Genuine',
+                  message: `Case#${record.id} marked as Genuine.`
                 })
               }}
             >
@@ -32,8 +32,8 @@ const ValidatePage = () => {
               onClick={() => {
                 dispatch({ type: 'markFraud', payload: record.id })
                 openDecisionNotification({
-                  decision: 'Genuine',
-                  message: `Case#${record.id} marked as Genuine.`
+                  decision: 'Fraud',
+                  message: `Case#${record.id} marked as Fraud.`
                 })
               }}
             >
