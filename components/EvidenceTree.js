@@ -1,5 +1,5 @@
 import { Tree } from 'antd'
-import { useState, useEffect, Component } from 'react'
+import { Component } from 'react'
 
 const { TreeNode } = Tree
 
@@ -12,7 +12,7 @@ export class EvidenceTree extends Component {
           title: props.decision,
           key: '0',
           factID:
-            'WA:RF:b53fc22b90a489f0065e2e9f7beb4357456fc8b32ad5d34a2f61239d84baf1a6'
+            'WA:RF:38ce1dcb6194f9e2f5008f90fc000e0292505c723bed93c85b434108c04128b6'
         }
       ]
     }
@@ -34,7 +34,7 @@ export class EvidenceTree extends Component {
 
     treeNode.props.dataRef.children = result.rule.conditions.map(
       (condition, i) => ({
-        title: condition.alt,
+        title: `[${condition.certainty}%] ${condition.alt}`,
         key: `${treeNode.props.eventKey}-${i}`,
         factID: condition.factID,
         disabled: condition.certainty === 0,
