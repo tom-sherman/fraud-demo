@@ -11,8 +11,7 @@ export class EvidenceTree extends Component {
         {
           title: props.decision,
           key: '0',
-          factID:
-            'WA:RF:38ce1dcb6194f9e2f5008f90fc000e0292505c723bed93c85b434108c04128b6'
+          factId: props.factId
         }
       ]
     }
@@ -24,7 +23,7 @@ export class EvidenceTree extends Component {
     }
     const result = await fetch(
       `https://enterprise-api.rainbird.ai/analysis/evidence/${
-        treeNode.props.factID
+        treeNode.props.factId
       }`
     ).then(res => res.json())
 
@@ -38,7 +37,7 @@ export class EvidenceTree extends Component {
           condition.alt
         }`,
         key: `${treeNode.props.eventKey}-${i}`,
-        factID: condition.factID,
+        factId: condition.factID,
         disabled: condition.certainty === 0,
         isLeaf:
           condition.certainty === 0 || typeof condition.expression === 'object'

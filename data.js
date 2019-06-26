@@ -1,20 +1,22 @@
+import moment from 'moment'
+
 const data = [
   {
     id: 1,
     accountId: '2243',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '2013-01-09T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('2013-01-09T00:00:00.000Z'),
     postcode: 'NG3 7HA',
     previousPostcode: 'HR4 0RW',
-    dateCardLastIssued: '2016-07-07T23:00:00.000Z',
-    addressLastChanged: '2013-09-08T23:00:00.000Z',
+    dateCardLastIssued: moment('2016-07-07T23:00:00.000Z'),
+    addressLastChanged: moment('2013-09-08T23:00:00.000Z'),
     transactions: [
       {
         id: 'ji2t0gu86l',
         accountId: '2243',
         location: 'Nottingham',
         amount: 2.5,
-        date: '2019-01-04T00:00:00.000Z',
+        date: moment('2019-01-04T00:00:00.000Z'),
         merchantCode: '5411',
         source: 'Card present no PIN used'
       },
@@ -23,7 +25,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 3.3,
-        date: '2019-01-04T00:00:00.000Z',
+        date: moment('2019-01-04T00:00:00.000Z'),
         merchantCode: '5411',
         source: 'Card present no PIN used'
       },
@@ -32,7 +34,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 10.2,
-        date: '2019-01-07T00:00:00.000Z',
+        date: moment('2019-01-07T00:00:00.000Z'),
         merchantCode: '5251',
         source: 'Card present no PIN used'
       },
@@ -41,7 +43,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 20,
-        date: '2019-02-03T00:00:00.000Z',
+        date: moment('2019-02-03T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present no PIN used'
       },
@@ -50,7 +52,7 @@ const data = [
         accountId: '2243',
         location: 'Peterborough',
         amount: 19.99,
-        date: '2019-02-04T00:00:00.000Z',
+        date: moment('2019-02-04T00:00:00.000Z'),
         merchantCode: '5945',
         source: 'Online no PIN used'
       },
@@ -59,7 +61,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 50,
-        date: '2019-02-05T00:00:00.000Z',
+        date: moment('2019-02-05T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present and PIN used'
       },
@@ -68,7 +70,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 50,
-        date: '2019-03-10T00:00:00.000Z',
+        date: moment('2019-03-10T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present and PIN used'
       },
@@ -77,7 +79,7 @@ const data = [
         accountId: '2243',
         location: 'Portsmouth',
         amount: 10.99,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5945',
         source: 'Online no PIN used'
       },
@@ -86,7 +88,7 @@ const data = [
         accountId: '2243',
         location: 'Portsmouth',
         amount: 10,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5945',
         source: 'Online no PIN used'
       },
@@ -95,7 +97,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 50.01,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present no PIN used'
       },
@@ -104,7 +106,7 @@ const data = [
         accountId: '2243',
         location: 'London',
         amount: 49.99,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '6381',
         source: 'Online no PIN used'
       },
@@ -113,7 +115,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 20.05,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present no PIN used'
       },
@@ -122,7 +124,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 46.75,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5411',
         source: 'Card present no PIN used'
       },
@@ -131,7 +133,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 32.34,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5411',
         source: 'Card present no PIN used'
       },
@@ -140,7 +142,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 2.99,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5251',
         source: 'Card present no PIN used'
       },
@@ -149,7 +151,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 3.99,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5995',
         source: 'Card present no PIN used'
       },
@@ -158,7 +160,7 @@ const data = [
         accountId: '2243',
         location: 'Nottingham',
         amount: 40.05,
-        date: '2019-03-11T00:00:00.000Z',
+        date: moment('2019-03-11T00:00:00.000Z'),
         merchantCode: '5172',
         source: 'Card present and PIN used'
       },
@@ -167,7 +169,7 @@ const data = [
         accountId: '2243',
         location: 'London',
         amount: 2265.43,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '5521',
         source: 'Online no PIN used'
       },
@@ -176,7 +178,7 @@ const data = [
         accountId: '2243',
         location: 'London',
         amount: 1122.34,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '5521',
         source: 'Online no PIN used'
       }
@@ -186,19 +188,19 @@ const data = [
   {
     id: 2,
     accountId: '4445',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '2019-02-24T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('2019-02-24T00:00:00.000Z'),
     postcode: 'HA3 7PS',
     previousPostcode: 'E10 5QF',
-    dateCardLastIssued: '2019-03-10T00:00:00.000Z',
-    addressLastChanged: '2019-02-24T00:00:00.000Z',
+    dateCardLastIssued: moment('2019-03-10T00:00:00.000Z'),
+    addressLastChanged: moment('2019-02-24T00:00:00.000Z'),
     transactions: [
       {
         id: '097bk68ltv',
         accountId: '4445',
         location: 'London',
         amount: 1.99,
-        date: '2019-01-05T00:00:00.000Z',
+        date: moment('2019-01-05T00:00:00.000Z'),
         merchantCode: '5995',
         source: 'Card present no PIN used'
       },
@@ -207,7 +209,7 @@ const data = [
         accountId: '4445',
         location: 'London',
         amount: 11.24,
-        date: '2019-01-06T00:00:00.000Z',
+        date: moment('2019-01-06T00:00:00.000Z'),
         merchantCode: '5251',
         source: 'Card present no PIN used'
       },
@@ -216,7 +218,7 @@ const data = [
         accountId: '4445',
         location: 'London',
         amount: 4.33,
-        date: '2019-01-07T00:00:00.000Z',
+        date: moment('2019-01-07T00:00:00.000Z'),
         merchantCode: '5411',
         source: 'Card present no PIN used'
       },
@@ -225,7 +227,7 @@ const data = [
         accountId: '4445',
         location: 'London',
         amount: 1124.05,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '5045',
         source: 'Card present and PIN used'
       },
@@ -234,7 +236,7 @@ const data = [
         accountId: '4445',
         location: 'London',
         amount: 4673.99,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '5045',
         source: 'Card present and PIN used'
       },
@@ -243,7 +245,7 @@ const data = [
         accountId: '4445',
         location: 'London',
         amount: 3999.99,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '5045',
         source: 'Card present and PIN used'
       }
@@ -253,19 +255,19 @@ const data = [
   {
     id: 3,
     accountId: '1182',
-    flagDate: '2019-03-13T00:00:00.000Z',
-    contactDetailsLastChanged: '2019-03-12T00:00:00.000Z',
+    flagDate: moment('2019-03-13T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('2019-03-12T00:00:00.000Z'),
     postcode: null,
     previousPostcode: 'HX2 6PW',
-    dateCardLastIssued: '2019-03-12T00:00:00.000Z',
-    addressLastChanged: '2019-03-12T00:00:00.000Z',
+    dateCardLastIssued: moment('2019-03-12T00:00:00.000Z'),
+    addressLastChanged: moment('2019-03-12T00:00:00.000Z'),
     transactions: [
       {
         id: 'wtk1yk1lyi',
         accountId: '1182',
         location: 'Halifax',
         amount: 2146.76,
-        date: '2016-06-04T23:00:00.000Z',
+        date: moment('2016-06-04T23:00:00.000Z'),
         merchantCode: '3005',
         source: 'Online no PIN used'
       },
@@ -274,7 +276,7 @@ const data = [
         accountId: '1182',
         location: 'Halifax',
         amount: 765.96,
-        date: '2017-05-27T23:00:00.000Z',
+        date: moment('2017-05-27T23:00:00.000Z'),
         merchantCode: '3504',
         source: 'Card present and PIN used'
       },
@@ -283,7 +285,7 @@ const data = [
         accountId: '1182',
         location: 'Halifax',
         amount: 1335.67,
-        date: '2018-06-04T23:00:00.000Z',
+        date: moment('2018-06-04T23:00:00.000Z'),
         merchantCode: '4722',
         source: 'Online no PIN used'
       },
@@ -292,7 +294,7 @@ const data = [
         accountId: '1182',
         location: 'Halifax',
         amount: 405.99,
-        date: '2018-12-19T00:00:00.000Z',
+        date: moment('2018-12-19T00:00:00.000Z'),
         merchantCode: '7993',
         source: 'Card present and PIN used'
       },
@@ -301,7 +303,7 @@ const data = [
         accountId: '1182',
         location: 'London',
         amount: 50,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '4829',
         source: 'Card present and PIN used'
       },
@@ -310,7 +312,7 @@ const data = [
         accountId: '1182',
         location: 'London',
         amount: 50,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '4829',
         source: 'Card present and PIN used'
       },
@@ -319,7 +321,7 @@ const data = [
         accountId: '1182',
         location: 'London',
         amount: 50,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '4829',
         source: 'Card present and PIN used'
       },
@@ -328,7 +330,7 @@ const data = [
         accountId: '1182',
         location: 'London',
         amount: 50,
-        date: '2019-03-12T00:00:00.000Z',
+        date: moment('2019-03-12T00:00:00.000Z'),
         merchantCode: '4829',
         source: 'Card present and PIN used'
       }
@@ -338,11 +340,11 @@ const data = [
   {
     id: 4,
     accountId: '1414',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1988-12-11T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1988-12-11T00:00:00.000Z'),
     postcode: 'BB11 5RJ',
     previousPostcode: 'LL46 2TB',
-    dateCardLastIssued: '2017-10-01T23:00:00.000Z',
+    dateCardLastIssued: moment('2017-10-01T23:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Fraud'
@@ -350,11 +352,11 @@ const data = [
   {
     id: 5,
     accountId: '8607',
-    flagDate: '2019-03-13T00:00:00.000Z',
-    contactDetailsLastChanged: '1980-11-01T00:00:00.000Z',
+    flagDate: moment('2019-03-13T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1980-11-01T00:00:00.000Z'),
     postcode: 'S80 9TD',
     previousPostcode: null,
-    dateCardLastIssued: '2016-06-28T23:00:00.000Z',
+    dateCardLastIssued: moment('2016-06-28T23:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Genuine'
@@ -362,35 +364,35 @@ const data = [
   {
     id: 6,
     accountId: '1673',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1999-03-18T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1999-03-18T00:00:00.000Z'),
     postcode: 'NG34 7XW',
     previousPostcode: null,
-    dateCardLastIssued: '2016-01-27T00:00:00.000Z',
-    addressLastChanged: '1993-07-30T23:00:00.000Z',
+    dateCardLastIssued: moment('2016-01-27T00:00:00.000Z'),
+    addressLastChanged: moment('1993-07-30T23:00:00.000Z'),
     transactions: [],
     decision: 'Genuine'
   },
   {
     id: 7,
     accountId: '5820',
-    flagDate: '2019-03-13T00:00:00.000Z',
-    contactDetailsLastChanged: '2011-03-30T23:00:00.000Z',
+    flagDate: moment('2019-03-13T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('2011-03-30T23:00:00.000Z'),
     postcode: 'SG4 8NU',
     previousPostcode: 'BS16 3JY',
-    dateCardLastIssued: '2015-10-04T23:00:00.000Z',
-    addressLastChanged: '1957-04-30T23:00:00.000Z',
+    dateCardLastIssued: moment('2015-10-04T23:00:00.000Z'),
+    addressLastChanged: moment('1957-04-30T23:00:00.000Z'),
     transactions: [],
     decision: 'Fraud'
   },
   {
     id: 8,
     accountId: '4382',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1987-12-15T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1987-12-15T00:00:00.000Z'),
     postcode: 'DE55 7DH',
     previousPostcode: 'EH4 6SE',
-    dateCardLastIssued: '2015-05-16T23:00:00.000Z',
+    dateCardLastIssued: moment('2015-05-16T23:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Fraud'
@@ -398,11 +400,11 @@ const data = [
   {
     id: 9,
     accountId: '8822',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1988-12-01T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
     postcode: 'CH44 2BA',
     previousPostcode: null,
-    dateCardLastIssued: '2016-01-16T00:00:00.000Z',
+    dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Fraud'
@@ -410,11 +412,11 @@ const data = [
   {
     id: 10,
     accountId: '4334',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1988-12-01T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
     postcode: 'CH44 2BA',
     previousPostcode: null,
-    dateCardLastIssued: '2016-01-16T00:00:00.000Z',
+    dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Refer'
@@ -422,11 +424,11 @@ const data = [
   {
     id: 11,
     accountId: '5361',
-    flagDate: '2019-03-12T00:00:00.000Z',
-    contactDetailsLastChanged: '1988-12-01T00:00:00.000Z',
+    flagDate: moment('2019-03-12T00:00:00.000Z'),
+    contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
     postcode: 'CH44 2BA',
     previousPostcode: null,
-    dateCardLastIssued: '2016-01-16T00:00:00.000Z',
+    dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
     addressLastChanged: null,
     transactions: [],
     decision: 'Refer'

@@ -17,7 +17,8 @@ export const CaseTable = ({ cases, actionRender }) => (
       },
       {
         title: 'Flag Date',
-        dataIndex: 'flagDate'
+        dataIndex: 'flagDate',
+        render: date => date.format('YYYY-MM-DD')
       },
       {
         title: 'Decision',

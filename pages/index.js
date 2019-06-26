@@ -1,13 +1,11 @@
 import { Col, Row, Progress, Typography, Statistic, Icon } from 'antd'
 import Head from 'next/head'
 import { useAppState } from '../components/AppContext'
-import { CasePie } from '../components/CasePie'
-import { filterFraud, filterGenuine, filterRefer, formatDate } from '../util'
+import { renderDate } from '../util'
+import moment from 'moment'
 
-const HomePage = ({ history }) => {
-  const [{ cases, referralsToday }, dispatch] = useAppState()
-
-  const currentReferralCount = cases.filter(filterRefer).length
+const HomePage = () => {
+  const [{ referralsToday, completedReferrals }] = useAppState()
 
   return (
     <>
@@ -17,14 +15,14 @@ const HomePage = ({ history }) => {
 
       <div>
         <Typography.Title style={{ marginBottom: '2em' }}>
-          Dashboard ({formatDate(new Date())})
+          Dashboard ({renderDate(moment())})
         </Typography.Title>
         <Row>
           <Col span={7} style={{ paddingRight: '1.5em' }}>
             <div className="ant-statistic-title">Referral Completion</div>
             <Progress
               // type="dashboard"
-              percent={100 - (100 * currentReferralCount) / referralsToday}
+              percent={Math.round((100 * completedReferrals) / referralsToday)}
             />
           </Col>
           <Col span={5}>

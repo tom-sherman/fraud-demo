@@ -3,7 +3,8 @@ import App, { Container } from 'next/app'
 import { AppProvider } from '../components/AppContext'
 import { App as AppComponent } from '../components/App'
 import data from '../data'
-import { filterRefer } from '../util'
+import { filterRefer, filterGenuine, filterFraud } from '../util'
+import { notification } from 'antd'
 
 import 'antd/dist/antd.css'
 import 'react-vis/dist/style.css'
@@ -21,8 +22,9 @@ class MyApp extends App {
   }
 
   INITIAL_APP_STATE = {
-    cases: data.map(d => ({ originalDecision: d.decision, ...d })),
-    referralsToday: data.filter(filterRefer).length
+    cases: data.map(d => ({ rbDecision: d.decision, ...d })),
+    referralsToday: data.filter(filterRefer).length,
+    completedReferrals: 0
   }
 
   render() {
@@ -58,16 +60,44 @@ const reducer = (state, action) => {
         })
       }
     case 'caseDecision':
+      const isRefer = filterRefer({ decision: action.payload.decision })
+      openNotificationWithIcon({
+        decision: action.payload.decision,
+        message: `Case#${action.payload.id} marked as ${
+          action.payload.decision
+        }`
+      })
       return {
         ...state,
+        referralsToday: isRefer
+          ? state.referralsToday + 1
+          : state.referralsToday,
+        completedReferrals: isRefer
+          ? state.completedReferrals
+          : state.completedReferrals + 1,
         cases: state.cases.map(c => {
           if (c.id !== action.payload.id) {
             return c
           }
+          console.log('caseDecision', action.payload)
 
           c.decision = action.payload.decision
+          if (
+            action.payload.decision !== 'Info needed' &&
+            action.payload.decision !== 'Error'
+          ) {
+            c.rbDecision = action.payload.decision
+            c.factId = action.payload.apiResponse.result[0].factID
+          }
           return c
         })
+      }
+    case 'updateCase':
+      return {
+        ...state,
+        cases: state.cases.map(c =>
+          c.id === action.payload.id ? action.payload : c
+        )
       }
     default:
       throw new Error(`"${action.type}" is not a valid action.`)
@@ -77,6 +107,7 @@ const reducer = (state, action) => {
 function markCase(state, action, decision) {
   return {
     ...state,
+    completedReferrals: state.completedReferrals + 1,
     cases: state.cases.map(c => {
       if (c.id !== action.payload) {
         return c
@@ -87,6 +118,21 @@ function markCase(state, action, decision) {
       return c
     })
   }
+}
+
+const openNotificationWithIcon = ({ decision, message, description }) => {
+  let type
+  if (filterRefer({ decision })) {
+    type = 'info'
+  } else if (filterGenuine({ decision })) {
+    type = 'success'
+  } else if (filterFraud({ decision })) {
+    type = 'error'
+  }
+  notification[type]({
+    message,
+    description
+  })
 }
 
 const nextCaseId = cases =>
