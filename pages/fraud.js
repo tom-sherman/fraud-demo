@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Typography } from 'antd'
 import { useAppState } from '../components/AppContext'
 import { filterFraud } from '../util'
+import { openDecisionNotification } from '../components/notifications'
 
 const FraudPage = () => {
   const [{ cases }, dispatch] = useAppState()
@@ -18,9 +19,13 @@ const FraudPage = () => {
         cases={cases.filter(filterFraud)}
         actionRender={(_, record) => (
           <Button
-            onClick={() =>
+            onClick={() => {
               dispatch({ type: 'markGenuine', payload: record.id })
-            }
+              openDecisionNotification({
+                decision: 'Genuine',
+                message: `Case#${record.id} marked as Genuine.`
+              })
+            }}
           >
             Genuine
           </Button>

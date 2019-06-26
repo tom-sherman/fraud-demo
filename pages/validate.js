@@ -3,6 +3,7 @@ import { Radio, Typography } from 'antd'
 import Head from 'next/head'
 import { useAppState } from '../components/AppContext'
 import { filterRefer } from '../util'
+import { openDecisionNotification } from '../components/notifications'
 
 const ValidatePage = () => {
   const [{ cases }, dispatch] = useAppState()
@@ -17,16 +18,24 @@ const ValidatePage = () => {
         actionRender={(_, record) => (
           <Radio.Group>
             <Radio.Button
-              onClick={() =>
+              onClick={() => {
                 dispatch({ type: 'markGenuine', payload: record.id })
-              }
+                openDecisionNotification({
+                  decision: 'Fraud',
+                  message: `Case#${record.id} marked as Fraud.`
+                })
+              }}
             >
               Genuine
             </Radio.Button>
             <Radio.Button
-              onClick={() =>
+              onClick={() => {
                 dispatch({ type: 'markFraud', payload: record.id })
-              }
+                openDecisionNotification({
+                  decision: 'Genuine',
+                  message: `Case#${record.id} marked as Genuine.`
+                })
+              }}
             >
               Fraud
             </Radio.Button>

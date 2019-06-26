@@ -4,7 +4,7 @@ import { AppProvider } from '../components/AppContext'
 import { App as AppComponent } from '../components/App'
 import data from '../data'
 import { filterRefer, filterGenuine, filterFraud } from '../util'
-import { notification } from 'antd'
+import { openDecisionNotification } from '../components/notifications'
 
 import 'antd/dist/antd.css'
 import 'react-vis/dist/style.css'
@@ -61,7 +61,7 @@ const reducer = (state, action) => {
       }
     case 'caseDecision':
       const isRefer = filterRefer({ decision: action.payload.decision })
-      openNotificationWithIcon({
+      openDecisionNotification({
         decision: action.payload.decision,
         message: `Case#${action.payload.id} marked as ${
           action.payload.decision
@@ -118,21 +118,6 @@ function markCase(state, action, decision) {
       return c
     })
   }
-}
-
-const openNotificationWithIcon = ({ decision, message, description }) => {
-  let type
-  if (filterRefer({ decision })) {
-    type = 'info'
-  } else if (filterGenuine({ decision })) {
-    type = 'success'
-  } else if (filterFraud({ decision })) {
-    type = 'error'
-  }
-  notification[type]({
-    message,
-    description
-  })
 }
 
 const nextCaseId = cases =>
