@@ -34,7 +34,9 @@ export class EvidenceTree extends Component {
 
     treeNode.props.dataRef.children = result.rule.conditions.map(
       (condition, i) => ({
-        title: `[${condition.certainty}%] ${condition.alt}`,
+        title: `${condition.certainty ? `[${condition.certainty}%]` : ''} ${
+          condition.alt
+        }`,
         key: `${treeNode.props.eventKey}-${i}`,
         factID: condition.factID,
         disabled: condition.certainty === 0,
