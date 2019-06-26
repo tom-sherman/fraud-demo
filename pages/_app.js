@@ -3,10 +3,11 @@ import App, { Container } from 'next/app'
 import { AppProvider } from '../components/AppContext'
 import { App as AppComponent } from '../components/App'
 import data from '../data'
+import { filterRefer } from '../util'
 
 import 'antd/dist/antd.css'
 import 'react-vis/dist/style.css'
-import { filterRefer } from '../util'
+import '../styles.css'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -54,6 +55,18 @@ const reducer = (state, action) => {
         cases: state.cases.concat({
           id: nextCaseId(state.cases),
           ...action.payload
+        })
+      }
+    case 'caseDecision':
+      return {
+        ...state,
+        cases: state.cases.map(c => {
+          if (c.id !== action.payload.id) {
+            return c
+          }
+
+          c.decision = action.payload.decision
+          return c
         })
       }
     default:
