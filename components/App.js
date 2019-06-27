@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Badge, Icon, Divider } from 'antd'
+import { Layout, Menu, Badge, Icon } from 'antd'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { useAppState } from '../components/AppContext'

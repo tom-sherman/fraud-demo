@@ -3,11 +3,10 @@ import App, { Container } from 'next/app'
 import { AppProvider } from '../components/AppContext'
 import { App as AppComponent } from '../components/App'
 import data from '../data'
-import { filterRefer, filterGenuine, filterFraud } from '../util'
+import { filterRefer } from '../util'
 import { openDecisionNotification } from '../components/notifications'
 
 import 'antd/dist/antd.css'
-import 'react-vis/dist/style.css'
 import '../styles.css'
 
 class MyApp extends App {
