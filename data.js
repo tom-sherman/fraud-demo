@@ -413,11 +413,24 @@ const data = [
     flagDate: moment('2019-03-13T00:00:00.000Z'),
     contactDetailsLastChanged: moment('1980-11-01T00:00:00.000Z'),
     postcode: 'S80 9TD',
-    previousPostcode: null,
+    previousPostcode: 'S80 2AH',
     dateCardLastIssued: moment('2016-06-28T23:00:00.000Z'),
-    addressLastChanged: null,
-    transactions: [],
-    decision: 'Info needed'
+    addressLastChanged: moment('2003-02-23T23:00:00.000Z'),
+    transactions: [
+      {
+        id: 'fd8dhsks39',
+        accountId: '8607',
+        location: 'Shrewsbury',
+        amount: 12.99,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '2334',
+        source: 'Card present no PIN used'
+      }
+    ],
+    decision: 'Genuine',
+    rbDecision: 'Genuine',
+    factId:
+      'WA:RF:58ddf4672dfc5d09007fdeb133834b0e6165701d61282864a2e4a9351ea8485f'
   },
   {
     id: 6,
@@ -428,7 +441,35 @@ const data = [
     previousPostcode: 'EH141DX',
     dateCardLastIssued: moment('2019-02-27T00:00:00.000Z'),
     addressLastChanged: moment('1993-07-30T23:00:00.000Z'),
-    transactions: [],
+    transactions: [
+      {
+        id: '87shdj1zd',
+        accountId: '1673',
+        location: 'South Mimms',
+        amount: 1.99,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5812',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: 'jd8sjja193',
+        accountId: '1673',
+        location: 'South Mimms',
+        amount: 6.49,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5814',
+        source: 'Card present no PIN used'
+      },
+      {
+        id: 'lxzndfyv83h',
+        accountId: '1673',
+        location: 'South Mimms',
+        amount: 20.01,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '5172',
+        source: 'Card present no PIN used'
+      }
+    ],
     decision: 'Refer',
     rbDecision: 'Refer',
     factId:
@@ -457,33 +498,58 @@ const data = [
     postcode: 'DE55 7DH',
     previousPostcode: 'EH4 6SE',
     dateCardLastIssued: moment('2015-05-16T23:00:00.000Z'),
-    addressLastChanged: null,
+    addressLastChanged: moment('1987-12-15T00:00:00.000Z'),
     transactions: [],
-    decision: 'Info needed'
+    decision: 'Genuine',
+    rbDecision: 'Genuine',
+    factId:
+      'WA:RF:3cda3e88b8d93c3725f6bd485a6099c3e0e4ed78966bf57c9e3dc3fc712c7cf6'
   },
   {
     id: 9,
     accountId: '8822',
     flagDate: moment('2019-03-12T00:00:00.000Z'),
     contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
-    postcode: 'CH44 2BA',
-    previousPostcode: null,
-    dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
-    addressLastChanged: null,
-    transactions: [],
+    postcode: null,
+    previousPostcode: 'CH44 2BA',
+    dateCardLastIssued: null,
+    addressLastChanged: moment('2019-03-06T00:00:00.000Z'),
+    transactions: [
+      {
+        id: 'jsmmn38qns',
+        accountId: '5411',
+        location: 'Sheffield',
+        amount: 50.68,
+        date: moment('2019-03-10T00:00:00.000Z'),
+        merchantCode: '2334',
+        source: 'Card present and PIN used'
+      },
+      {
+        id: 'ds778sh3zp',
+        accountId: '5411',
+        location: 'Sheffield',
+        amount: 12.55,
+        date: moment('2019-03-12T00:00:00.000Z'),
+        merchantCode: '2334',
+        source: 'Card present no PIN used'
+      }
+    ],
     decision: 'Info needed'
   },
   {
     id: 10,
     accountId: '4334',
     flagDate: moment('2019-03-12T00:00:00.000Z'),
-    contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
-    postcode: 'CH44 2BA',
-    previousPostcode: null,
-    dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
-    addressLastChanged: null,
+    contactDetailsLastChanged: moment('2001-10-03T00:00:00.000Z'),
+    postcode: 'OL11 5BX',
+    previousPostcode: 'OL11 5BX',
+    dateCardLastIssued: moment('2001-10-03T00:00:00.000Z'),
+    addressLastChanged: moment('2001-10-03T00:00:00.000Z'),
     transactions: [],
-    decision: 'Info needed'
+    decision: 'Genuine',
+    rbDecision: 'Genuine',
+    factId:
+      'WA:RF:01133c55e889cf2f1c5ed82f74aa797c004fe67414d9942999c657e602bd32fb'
   },
   {
     id: 11,
@@ -491,11 +557,14 @@ const data = [
     flagDate: moment('2019-03-12T00:00:00.000Z'),
     contactDetailsLastChanged: moment('1988-12-01T00:00:00.000Z'),
     postcode: 'CH44 2BA',
-    previousPostcode: null,
+    previousPostcode: 'WF4 4LD',
     dateCardLastIssued: moment('2016-01-16T00:00:00.000Z'),
-    addressLastChanged: null,
+    addressLastChanged: moment('2019-03-11T00:00:00.000Z'),
     transactions: [],
-    decision: 'Info needed'
+    decision: 'Refer',
+    rbDecision: 'Refer',
+    factId:
+      'WA:RF:2d0fe02ee31c95b6cdcc4f8e94b6f93d8379278ed77393e3199b77563c6439d8'
   }
 ]
 
