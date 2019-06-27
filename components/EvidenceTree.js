@@ -27,22 +27,39 @@ export class EvidenceTree extends Component {
       }`
     ).then(res => res.json())
 
-    if (!result || !result.rule) {
+    if (!result || !result.source) {
       return
     }
 
-    treeNode.props.dataRef.children = result.rule.conditions.map(
-      (condition, i) => ({
-        title: `${condition.certainty ? `[${condition.certainty}%]` : ''} ${
-          condition.alt
-        }`,
-        key: `${treeNode.props.eventKey}-${i}`,
-        factId: condition.factID,
-        disabled: condition.certainty === 0,
-        isLeaf:
-          condition.certainty === 0 || typeof condition.expression === 'object'
-      })
-    )
+    if (result.source === 'rule') {
+      treeNode.props.dataRef.children = result.rule.conditions.map(
+        (condition, i) => ({
+          title: `${condition.certainty ? `[${condition.certainty}%]` : ''} ${
+            condition.alt
+          }`,
+          key: `${treeNode.props.eventKey}-${i}`,
+          factId: condition.factID,
+          disabled: condition.certainty === 0,
+          isLeaf:
+            condition.certainty === 0 ||
+            typeof condition.expression === 'object'
+        })
+      )
+    } else {
+      const SOURCE_TITLE_TABLE = {
+        injection: 'Fact obtained from data',
+        datasource: 'Fact obtained from Google Maps API',
+        km: 'Fact stored in Knowledge map'
+      }
+
+      treeNode.props.dataRef.children = [
+        {
+          title: SOURCE_TITLE_TABLE[result.source],
+          isLeaf: true,
+          key: treeNode.props.eventKey + '-0'
+        }
+      ]
+    }
 
     this.setState({
       treeData: [...this.state.treeData]
