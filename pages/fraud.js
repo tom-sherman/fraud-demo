@@ -18,6 +18,12 @@ const FraudPage = () => {
       <Typography.Title>Fraud Cases</Typography.Title>
       <CaseTable
         cases={cases.filter(filterFraud)}
+        possibleDecisions={[
+          'Fraud',
+          'Application Fraud',
+          'Card Not Present Fraud',
+          'Account Takeover'
+        ]}
         actionRender={(_, record) => (
           <Button
             onClick={() => {

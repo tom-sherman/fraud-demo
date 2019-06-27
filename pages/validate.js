@@ -16,6 +16,7 @@ const ValidatePage = () => {
       <Typography.Title>Validate Cases</Typography.Title>
       <CaseTable
         cases={cases.filter(filterRefer)}
+        possibleDecisions={['Refer', 'Info needed', 'Error']}
         actionRender={(_, record) => (
           <Radio.Group>
             <Radio.Button
