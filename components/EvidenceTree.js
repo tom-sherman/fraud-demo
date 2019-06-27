@@ -1,5 +1,6 @@
 import { Tree } from 'antd'
 import { Component } from 'react'
+import { API_DOMAIN } from '../util'
 
 const { TreeNode } = Tree
 
@@ -22,9 +23,7 @@ export class EvidenceTree extends Component {
       return
     }
     const result = await fetch(
-      `https://enterprise-api.rainbird.ai/analysis/evidence/${
-        treeNode.props.factId
-      }`
+      `${API_DOMAIN}/analysis/evidence/${treeNode.props.factId}`
     ).then(res => res.json())
 
     if (!result || !result.source) {
