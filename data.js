@@ -254,6 +254,7 @@ const data = [
       }
     ],
     decision: 'Card Not Present Fraud',
+    rbDecision: 'Card Not Present Fraud',
     factId:
       'WA:RF:2a042785ccbe21a2d2da708e92178a41ce6e3b03c447e36f47eb4682683fbbfa'
   },
