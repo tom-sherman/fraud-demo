@@ -25,7 +25,11 @@ const FraudPage = () => {
               openDecisionNotification({
                 decision: 'Genuine',
                 message: `Case#${record.id} marked as Genuine.`,
-                onClick: () => Router.push('/genuine')
+                onClick: () =>
+                  Router.push({
+                    pathname: '/genuine',
+                    query: { id: record.id }
+                  })
               })
             }}
           >

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { useAppState } from '../components/AppContext'
 import { filterRefer } from '../util'
 import { openDecisionNotification } from '../components/notifications'
+import Router from 'next/router'
 
 const ValidatePage = () => {
   const [{ cases }, dispatch] = useAppState()
@@ -22,7 +23,12 @@ const ValidatePage = () => {
                 dispatch({ type: 'markGenuine', payload: record.id })
                 openDecisionNotification({
                   decision: 'Genuine',
-                  message: `Case#${record.id} marked as Genuine.`
+                  message: `Case#${record.id} marked as Genuine.`,
+                  onClick: () =>
+                    Router.push({
+                      pathname: '/genuine',
+                      query: { id: record.id }
+                    })
                 })
               }}
             >
@@ -33,7 +39,12 @@ const ValidatePage = () => {
                 dispatch({ type: 'markFraud', payload: record.id })
                 openDecisionNotification({
                   decision: 'Fraud',
-                  message: `Case#${record.id} marked as Fraud.`
+                  message: `Case#${record.id} marked as Fraud.`,
+                  onClick: () =>
+                    Router.push({
+                      pathname: '/fraud',
+                      query: { id: record.id }
+                    })
                 })
               }}
             >

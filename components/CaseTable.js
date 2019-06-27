@@ -1,9 +1,11 @@
 import { Table } from 'antd'
 import { Case } from './Case'
+import { withRouter } from 'next/router'
 
-export const CaseTable = ({ cases, actionRender }) => (
+const CTable = ({ cases, actionRender, router }) => (
   <Table
-    dataSource={cases.map(c => ({ ...c, key: c.id }))}
+    dataSource={cases.map(c => ({ ...c, key: String(c.id) }))}
+    defaultExpandedRowKeys={[router.query.id]}
     columns={[
       {
         title: 'Account',
@@ -34,3 +36,5 @@ export const CaseTable = ({ cases, actionRender }) => (
     expandedRowRender={record => <Case {...record} />}
   />
 )
+
+export const CaseTable = withRouter(CTable)

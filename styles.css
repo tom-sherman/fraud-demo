@@ -1,3 +1,7 @@
 .ant-table-body {
   overflow: auto;
 }
+
+.ant-notification-notice {
+  cursor: pointer;
+}

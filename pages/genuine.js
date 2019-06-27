@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { useAppState } from '../components/AppContext'
 import { filterGenuine } from '../util'
 import { openDecisionNotification } from '../components/notifications'
+import Router from 'next/router'
 
 const GenuinePage = () => {
   const [{ cases }, dispatch] = useAppState()
@@ -23,7 +24,12 @@ const GenuinePage = () => {
               dispatch({ type: 'markFraud', payload: record.id })
               openDecisionNotification({
                 decision: 'Fraud',
-                message: `Case#${record.id} marked as Fraud.`
+                message: `Case#${record.id} marked as Fraud.`,
+                onClick: () =>
+                  Router.push({
+                    pathname: '/fraud',
+                    query: { id: record.id }
+                  })
               })
             }}
           >
