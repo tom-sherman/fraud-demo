@@ -36,6 +36,13 @@ export class EvidenceTree extends Component {
         (condition, i) => ({
           title: `${condition.certainty ? `[${condition.certainty}%]` : ''} ${
             condition.alt
+              ? condition.alt // If there is alt text show it
+              : condition.expression
+              ? condition.expression.text // If it is an expression, show the expression text
+              : // Else, show the triple
+                `${condition.subject} - ${condition.relationship} - ${
+                  condition.object
+                }`
           }`,
           key: `${treeNode.props.eventKey}-${i}`,
           factId: condition.factID,
@@ -77,7 +84,7 @@ export class EvidenceTree extends Component {
 
   render() {
     return (
-      <Tree loadData={this.onLoadData}>
+      <Tree loadData={this.onLoadData} defaultExpandedKeys={['0']}>
         {this.renderTreeNodes(this.state.treeData)}
       </Tree>
     )
