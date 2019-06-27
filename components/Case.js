@@ -7,7 +7,8 @@ import {
   Icon,
   Input,
   DatePicker,
-  Spin
+  Spin,
+  Tag
 } from 'antd'
 import { renderDate, formatCurrency, analyseCase } from '../util'
 import { EvidenceTree } from './EvidenceTree'
@@ -84,7 +85,7 @@ const CaseDescription = ({
           ) : postcode && postcode.length ? (
             postcode
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
 
@@ -99,7 +100,7 @@ const CaseDescription = ({
           ) : previousPostcode ? (
             previousPostcode
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
 
@@ -112,7 +113,7 @@ const CaseDescription = ({
           ) : dateCardLastIssued ? (
             renderDate(dateCardLastIssued)
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
         <Descriptions.Item label="Date address last changed">
@@ -124,7 +125,7 @@ const CaseDescription = ({
           ) : addressLastChanged ? (
             renderDate(addressLastChanged)
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
         <Descriptions.Item label="Contact details last changed">
@@ -136,7 +137,7 @@ const CaseDescription = ({
           ) : contactDetailsLastChanged ? (
             renderDate(contactDetailsLastChanged)
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
         <Descriptions.Item label="Case flagged on">
@@ -148,7 +149,7 @@ const CaseDescription = ({
           ) : flagDate ? (
             renderDate(flagDate)
           ) : (
-            'FILL IN'
+            <MissingDataTag />
           )}
         </Descriptions.Item>
       </Descriptions>
@@ -285,3 +286,5 @@ export const Case = props => {
     </>
   )
 }
+
+const MissingDataTag = () => <Tag color="red">Missing data</Tag>
