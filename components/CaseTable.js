@@ -8,6 +8,11 @@ const CTable = ({ cases, actionRender, router }) => (
     defaultExpandedRowKeys={[router.query.id]}
     columns={[
       {
+        title: 'ID',
+        dataIndex: 'id',
+        width: 100
+      },
+      {
         title: 'Account',
         dataIndex: 'accountId'
       },
