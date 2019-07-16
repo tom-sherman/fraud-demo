@@ -20,9 +20,9 @@ export const renderDate = d => (d ? d.format('YYYY-MM-DD') : undefined)
 export const randomId = () =>
   (Math.random() * 1e16).toString(36).substring(0, 10)
 
-export const API_DOMAIN = 'https://enterprise-api.rainbird.ai'
-const KMID = '8eb8025d-72e8-4735-a60d-53f1a18dfc79'
-const API_AUTH = 'Basic OTk0OWRmM2YtMjIzZS00YTUyLTg5ZTgtNjk0Mjc4MDQ4ZjhkOg=='
+export const API_DOMAIN = process.env.API_URL
+const KMID = process.env.KMID
+const API_AUTH = process.env.API_AUTH
 const QUERY_REL = 'receives result'
 
 export const analyseCase = async caseData => {
